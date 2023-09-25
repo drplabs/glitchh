@@ -1,35 +1,74 @@
 import Link from 'next/link'
+
 import MobileMenu from './mobile-menu'
 
 export default function Header() {
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <header className="px-10 py-2  w-full z-40  fixed opacity-96  drop-shadow-lg backdrop-blur-3xl ">
+      <div className="max-w-1xl mx-auto px-4 sm:px-6 opacity-90 ">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className="shrink-0 mr-4 animate-bounce">
             {/* Logo */}
-            <Link href="/" className="block" aria-label="Cruip">
-              <svg className="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
-              </svg>
-            </Link>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOESURBVHgB3ZpdUhNBEMd7ZkM+qniINwgnMD6o+BZPYKiyxPKFcALICYATiCcQXijAKiuegDwZlAfxBusJyIMWCTHTdo9JarPJZjeTD2b4vWR3M7tV/+nume7eFTADWC7lW6lW0ZPiFQpVABBFupqn3zzcMwjigwADbl+vl3qCKjYIGYOfbmefTCXu97unxXTXe48AJbAYJWAtd3rpp5IMZvfrZNp72MVdBLshd6zmThs+H8da7vbtekEiXNBhASyHxBylzy63++dy0mB2Q4n4AxwQRvgr7Ww1eCHScixspSsvLF0wRujHWfDa2JjTrthFl4QdhIUxI5ZzKcaYcJwFGYk5ErYHjggj/C5ZLerPIcuR1Sok7iM4wrg4CzKwXM8d98ARouIsyEBcSsEWOOOOWCNh+3GjBuJoJirgBr4SoppkoBbHsQaOWK3jdTfi3LGP3uc8hK3Zc0ZsopLHSipfCNGEBSCVaK6eXF0nHS+wXMzfZbI3YAyJAnmQPWscgmWk7tLpEpjjdzy1sXryLfFsLpMUCq8kwMwplYKD1bMrK4UxUgI+BgM47cl9ujwCi6GKBo2SY0p7jsFyJJmgAAbQclwHy5GGZY0PDiDhAWMozo0ilgoBExfDPKVsJbAcKRDNUiVld++SkQrETzBACrHDNSBYjESBhhkG5rnXYrNAmVJeHcwp2CxQ91Dam89vZl8BsaaU+EJpqq9P/05eqHK1ZDXZLGhxrc0Xh5Q878ASSXdkQXz++qt/PufmFFXr8FLvcxR3NXhA9Kt1LY7zRDJhHZbIH6/zCBYAv+XpV+uDDGVSc3MReJ439yyH233BjsBA3H1Yb54IFNfhdt9QbknW2+aeCLiH35W4Eb44JI6DkJs94BTY5JVxXLtvpCpgn+UvAcARaG+tRvUxx5Y8JHBXOdBG0O8LJvRxIus5mo2K3QLj3xdMLFZ7Am2MQT/dzm3HDYqtxHl2lF5Fremb6NRK1Oqxq3qiNgMJPOIHKrTATTF6AQmTuIfCD8ydazdd+y9y+fshh0jmvJE4D070BVGQ3qxV+Lj95llZgSzrrrXgj9oWB29PudPG/jT3TC0uSOb8O8/iYCZ7RWshyb3ZVnaaDoDP2xNMyUziwvSs6sN80QsIGGB9U3aaN6lhrBYXrM1MsFZcuDYzwUpx42ozE2wUN7Y2M8EycdG1mQk2idOF8ryEMf8AY0trwRj5nrgAAAAASUVORK5CYII=" alt="" />
           </div>
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
+            {/* Desktop menu links */}
+            <ul className="flex grow justify-end flex-wrap items-center">
+              <li>
+                <Link href="/features" className=" lg:text-2xl font-medium text-white hover:text-amber-500 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+                  Features
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="lg:text-2xl font-medium text-white hover:text-amber-500 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className=" lg:text-2xl font-medium text-white hover:text-amber-500 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="lg:text-2xl  font-medium text-white hover:text-amber-500 px-4 py-2 flex items-center transition duration-150 ease-in-out">
+                  About us
+                </Link>
+              </li>
+              {/* 1st level: hover */}
+              {/* <Dropdown title="Support" >
+                <li>
+                  <Link href="/contact" className=" font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    Contact us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/help/frequently-asked-questions" className="font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    Help center
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/404" className="font-medium text-sm text-gray-400 hover:text-purple-600 flex py-2 px-4 leading-tight">
+                    404
+                  </Link>
+                </li>
+              </Dropdown> */}
+            </ul>
+
             {/* Desktop sign in links */}
             <ul className="flex grow justify-end flex-wrap items-center">
               <li>
                 <Link
-                  href="/signin"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                  href="/"
+                  className="btn-sm text-red bg-red-600  hover:bg-amber-500 ml-3"
                 >
                   Sign in
                 </Link>
               </li>
               <li>
-                <Link href="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
+                <Link href="/" className="btn-sm text-red bg-red-600  hover:bg-amber-500 ml-3">
                   Sign up
                 </Link>
               </li>
